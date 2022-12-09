@@ -1,8 +1,9 @@
 <template>
   <div>
     <Navbar />
-    <RouterView />
-
+    <div class=" mt-5">
+        <RouterView />
+    </div>
   </div>
 
 </template>
