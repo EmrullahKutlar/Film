@@ -26,9 +26,7 @@
                     <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search"
                          v-model="searchValue">
                     <i class="bi bi-search position-absolute top-0  text-dark  search-icon" type="button"> </i>
-
-                </form>
-                <div class="container position-absolute result-container" :class="{'d-block':searchValue.length>=1}">
+                    <div class="container position-absolute result-container" :class="{'d-block':searchValue.length>=1}">
                     <div class="row">
                         <div class="col-12">
                             <div class="d-flex justify-content-center">
@@ -39,6 +37,8 @@
                         </div>
                     </div>
                 </div>
+                </form>
+                
             </div>
         </div>
     </nav>
@@ -83,9 +83,9 @@ const searchValue = ref('')
     background-color: #ffff;
     border-radius: .25rem;
     border-top: none;
-    top: 105%;
+    top: 110%;
     height: 300px;
-    width: 85%;
+    width: 100%;
     display: none;
 }
 
@@ -94,22 +94,8 @@ const searchValue = ref('')
 }
 
 @media(max-width: 991px) {
-    .search-form {
+    .search-form ,  .result-container{
         width: 100%;
-    }
-    .result-container {
-        top: 75%;
-        width: 100%;
-    }
-}
-@media (max-width: 768px) {
-    .result-container {
-        top: 85%;
-    }
-}
-@media (max-width: 425px) {
-    .result-container {
-        top: 90%;
     }
 }
 </style>

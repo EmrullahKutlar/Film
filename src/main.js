@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import './assets/main.css'
 import VueAwesomePaginate from "vue-awesome-paginate";
 
-// import the necessary css file
+
+import './assets/main.css'
 import "vue-awesome-paginate/dist/style.css";
 
 const app = createApp(App)
