@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand text-warning me-5" href="#">OMDB</a>
+            <router-link class="navbar-brand text-warning me-5" to="/">OMDB</router-link>
 
             <i class="bi bi-list text-light navbar-toggler" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -12,16 +12,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light text-danger-hover" href="#">Link</a>
+                        <router-link class="nav-link " aria-current="page" to="/">Anasayfa</router-link>
                     </li>
                 </ul>
                 <form class="search-form d-flex">
                     <select name="" id="" class="rounded-start  select-input">
                         <option value="">Name</option>
-                        <option value="">Year</option>
+                        <option value="">Movie</option>
+                        <option value="">Tv Series</option>
                     </select>
                     <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search"
                          v-model="searchValue">
