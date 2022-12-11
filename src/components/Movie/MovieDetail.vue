@@ -8,8 +8,12 @@
             </div>
         </div>
         <div v-else class="col-12 d-flex flex-wrap">
-            <div class="col-12 col-lg-4 mt-3 "> <img class="rounded d-flex justify-content-center w-100 h-100"
-                    :src="movie.Poster" alt=""> </div>
+            <div class="col-12 col-lg-4 mt-3 ">
+                <img v-if="movie.Poster != 'N/A'" class="rounded d-flex justify-content-center w-100 h-100"
+                    :src="movie.Poster" alt="">
+                <img v-else src="../../assets/omdb.PNG" class="rounded d-flex justify-content-center w-100 h-100"
+                    alt="">
+            </div>
             <div class="col-12 col-lg-8 mt-3 flex-column ">
                 <div class="d-flex justify-content-center align-items-center">
                     <h2 class="text-warning"> {{ movie.Title }} </h2>

@@ -48,3 +48,16 @@ export const getSuggestion = (type) => {
     }
   });
 };
+export const searchMovie = (search,type) => {
+  type==="series"?type="series":type="movie";
+  return new Promise(async (resolve, reject) => {
+    try {
+      const response = await axios.post(
+        `http://www.omdbapi.com/?apikey=c5b429de&type=${type}&s=${search}`
+      );
+      resolve(response.data);
+    } catch (error) {
+      reject(error);
+    }
+  });
+};
