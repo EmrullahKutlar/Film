@@ -64,6 +64,11 @@ const props = defineProps({
         type: String,
         required: false,
         default: null
+    },
+    type: {
+        type: String,
+        required: false,
+        default: null
     }
 })
 const isLoading = ref(false)
@@ -91,7 +96,8 @@ const fetchMovies = async (page, years,) => {
     isLoading.value = true
     years = props.year
     var search = props.search
-    await getMovies(page, years,search).then(res => {
+    var type = props.type
+    await getMovies(page, years,search,type).then(res => {
         movies.value = res.Search
         totalResults.value = res.totalResults
     }).catch(err => {

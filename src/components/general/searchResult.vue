@@ -86,15 +86,14 @@ const searchRouterHandler = async (id) => {
     searchValue.value = ''
 }
 const getAllResult = async (search, type) => {
-    // await router.push({
-    //     path: '/search',
-    //     query: {
-    //         q: search,
-    //         type: type
-    //     }
-    // })
-    // searchValue.value = ''
-    console.log(search, type);
+    await router.push({
+        path: '/search',
+        query: {
+            q: search,
+            type: type
+        }
+    })
+    searchValue.value = ''
 }
 
 

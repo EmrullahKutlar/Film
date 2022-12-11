@@ -1,11 +1,13 @@
 import axios from "axios";
 
-export const getMovies = (page, year, search) => {
+export const getMovies = (page, year, search,type) => {
   return new Promise(async (resolve, reject) => {
     if (search!==null) {
+      console.log(page+" - "+ year+" - "+ search+" - "+type);
+      type==="series"?type="series":type="movie";
       try {
         const response = await axios.post(
-          `http://www.omdbapi.com/?apikey=c5b429de&type=movie&s=${search}&y=${year}&page=${page}`
+          `http://www.omdbapi.com/?apikey=c5b429de&type=${type}&s=${search}&page=${page}`
         );
         resolve(response.data);
       } catch (error) {
