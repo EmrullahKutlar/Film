@@ -46,8 +46,6 @@ import { getMovies } from '@/modules/services'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
-
-
 const props = defineProps({
     componentTitle: {
         type: String,

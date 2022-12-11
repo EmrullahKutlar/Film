@@ -15,27 +15,7 @@
                         <router-link class="nav-link " aria-current="page" to="/">Anasayfa</router-link>
                     </li>
                 </ul>
-                <form class="search-form d-flex">
-                    <select name="" id="" class="rounded-start  select-input">
-                        <option value="">Name</option>
-                        <option value="">Movie</option>
-                        <option value="">Tv Series</option>
-                    </select>
-                    <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search"
-                         v-model="searchValue">
-                    <i class="bi bi-search position-absolute top-0  text-dark  search-icon" type="button"> </i>
-                    <div class="container position-absolute result-container" :class="{'d-block':searchValue.length>=1}">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center">
-                                <div class="spinner-border text-warning" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </form>
+                <searchResultVue/>
                 
             </div>
         </div>
@@ -44,8 +24,11 @@
 </template>
 
 <script setup>
+import searchResultVue from './searchResult.vue';
 import { ref } from 'vue'
-const searchValue = ref('')
+components:{
+    searchResultVue
+}
 
 </script>
 

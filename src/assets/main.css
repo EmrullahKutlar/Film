@@ -62,4 +62,7 @@ nav{
 .active-page:hover {
   background-color: #ffc107;
 }
-
+.carousel__icon{
+  background: lightgray !important;
+  border-radius: 5px !important;
+}
