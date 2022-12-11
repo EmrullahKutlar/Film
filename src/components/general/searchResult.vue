@@ -6,12 +6,12 @@
             <option value="movie">Movie</option>
             <option value="series">Tv Series</option>
         </select>
-        <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search"
+        <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search" @focusout="searchValue = ''"
             v-model="searchValue" @keyup="searchHandler(searchValue, selectValue)">
         <i class="bi bi-search position-absolute top-0  text-dark  search-icon" type="button"> </i>
         <div class="container position-absolute result-container" :class="{ 'd-block': searchValue.length >= 1 }">
             <div class="row">
-                <div class="col-12" v-if="isLoading">
+                <div class="col-12 mt-1" v-if="isLoading">
                     <div class="d-flex justify-content-center">
                         <div class="spinner-border text-warning" role="status">
                             <span class="visually-hidden">Loading...</span>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <ul class="col-12" v-else>
-                    <li class="col-12 d-flex justify-content-center" v-if="error">
+                    <li class="col-12 d-flex justify-content-center mt-3" v-if="error">
                         <div class="text-center">
                             <h6 class="text-dark mb-0">{{ error }}</h6>
                         </div>
@@ -39,8 +39,8 @@
                             </div>
                         </div>
                     </li>
-                    <li class=" col-12" v-if="totalResults!=null" type="button" @click="getAllResult(searchValue,selectValue)"> 
-                        <p class="text-dark text-center mb-0 mt-3"> See all of {{totalResults}} results</p> </li>
+                    <li class=" col-12 " v-if="totalResults!=null" type="button" @click="getAllResult(searchValue,selectValue)"> 
+                        <p class="text-dark text-center mb-0 mt-3 fw-bolder"> See all of {{totalResults}} results</p> </li>
                 </ul>
             </div>
         </div>
