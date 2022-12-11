@@ -9,11 +9,7 @@
         </div>
         <div v-else class="col-12 ">
             <div class="col-12 border-warning border-bottom d-flex justify-content-between mb-3">
-                <h3 class="text-warning">{{props.title}}</h3>
-                <!-- <div class="d-none d-md-block">
-          <vue-awesome-paginate :total-items="parseInt(totalResults)" :items-per-page="10" :max-pages-shown="1" v-model="page"
-            :on-click="onClickHandler" />
-        </div> -->
+                <h3 class="text-warning">{{ props.title }}</h3>
             </div>
 
             <Carousel :settings="settings" :breakpoints="breakpoints">
@@ -43,7 +39,7 @@
 <script setup>
 import { Carousel, Navigation, Slide } from 'vue3-carousel'
 import { reactive, onMounted, ref } from 'vue';
-import { getSuggestion,getMovieById } from '@/modules/services'
+import { getSuggestion, getMovieById } from '@/modules/services'
 import { useRouter } from 'vue-router';
 import 'vue3-carousel/dist/carousel.css'
 const router = useRouter()
@@ -57,7 +53,7 @@ const props = defineProps({
     type: {
         type: String,
     },
-    title:{
+    title: {
         type: String,
         required: true,
     },
@@ -98,7 +94,7 @@ const routerHandler = (id) => {
         }
     })
 }
-const popularMoviesID = reactive(['tt13443470','tt9319668','tt16358384','tt10405370','tt8291284','tt0429087','tt1520211','tt0773262','tt2442560','tt0455275'])
+const popularMoviesID = reactive(['tt13443470', 'tt9319668', 'tt16358384', 'tt10405370', 'tt8291284', 'tt0429087', 'tt1520211', 'tt0773262', 'tt2442560', 'tt0455275'])
 
 onMounted(async () => {
     console.log(props.type);
@@ -110,7 +106,6 @@ onMounted(async () => {
             console.log(movies.value);
         }).catch(err => {
             console.log(err.message);
-            errorMessage.value = err.message
 
         }).finally(() => {
             isLoading.value = false
@@ -118,19 +113,21 @@ onMounted(async () => {
         })
     }
     else {
-        for(let i in popularMoviesID){
+        var populer = []
+        var i = 0
+        while (i < popularMoviesID.length) {
             await getMovieById(popularMoviesID[i]).then(res => {
-                movies.value.push(res)
+                populer.push(res)
             }).catch(err => {
                 console.log(err.message);
-                errorMessage.value = err.message
-    
+
             }).finally(() => {
                 isLoading.value = false
-    
+
             })
             i++;
         }
+        movies.value = populer
     }
 })
 
