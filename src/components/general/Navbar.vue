@@ -16,7 +16,14 @@
                     </li>
                 </ul>
                 <searchResultVue/>
-                
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item me-3">
+                        <button class="nav-link btn btn-outline-warning " aria-current="page" href="#"><i class="bi bi-person-fill"></i> Üye Ol</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link btn btn-outline-warning " aria-current="page" href="#"> <i class="bi bi-box-arrow-right"></i> Giriş Yap</button>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -34,7 +41,7 @@ components:{
 
 <style scoped>
 .search-form {
-    width: 85%;
+    width: 55%;
 }
 
 .select-input {

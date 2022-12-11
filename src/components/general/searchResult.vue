@@ -1,12 +1,12 @@
 <template>
-    <form class="search-form d-flex">
+    <form class="search-form d-flex me-auto">
         <select name="" id="" v-model="selectValue" class="rounded-start  select-input"
             @change="searchHandler(searchValue, selectValue)">
             <option value="title" selected>Title</option>
             <option value="movie">Movie</option>
             <option value="series">Tv Series</option>
         </select>
-        <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search" @focusout="searchValue = ''"
+        <input class="form-control rounded-end border-0 search-input " type="text" placeholder="Search" 
             v-model="searchValue" @keyup="searchHandler(searchValue, selectValue)">
         <i class="bi bi-search position-absolute top-0  text-dark  search-icon" type="button"> </i>
         <div class="container position-absolute result-container" :class="{ 'd-block': searchValue.length >= 1 }">
@@ -39,8 +39,9 @@
                             </div>
                         </div>
                     </li>
-                    <li class=" col-12 " v-if="totalResults!=null" type="button" @click="getAllResult(searchValue,selectValue)"> 
-                        <p class="text-dark text-center mb-0 mt-3 fw-bolder"> See all of {{totalResults}} results</p> </li>
+                    <li class=" col-12 " v-if="totalResults!=null && !error" type="button" @click="getAllResult(searchValue,selectValue)"> 
+                        <p class="text-dark text-center mb-0 mt-3 fw-bolder"> See all of {{totalResults}} results</p> 
+                    </li>
                 </ul>
             </div>
         </div>

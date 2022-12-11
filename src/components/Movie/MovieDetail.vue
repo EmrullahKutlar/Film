@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="col-12 mt-5">
-                <MovieCarouselVue :type="type" />
+                <MovieCarouselVue :type="type" :is-popular="false" title="Benzer Filmler" />
             </div>
         </div>
 
