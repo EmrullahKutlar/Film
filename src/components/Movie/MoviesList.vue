@@ -98,8 +98,11 @@ const fetchMovies = async (page, years,) => {
     var search = props.search
     var type = props.type
     await getMovies(page, years,search,type).then(res => {
+        if(res.Response == "False") {
+           router.push({name: '404'})
+        }else{
         movies.value = res.Search
-        totalResults.value = res.totalResults
+        totalResults.value = res.totalResults}
     }).catch(err => {
         console.log(err.message);
         errorMessage.value = err.message

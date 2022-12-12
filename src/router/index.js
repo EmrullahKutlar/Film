@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/Home/index.vue";
 import MovieView from "../views/Movie/index.vue";
 import SearchView from "../views/Search/index.vue";
+import ErrorView from "../views/404/404.vue";
 const router = createRouter({
   history: createWebHistory(),
   routes: [
@@ -20,6 +21,7 @@ const router = createRouter({
       name: "search",
       component: SearchView,
     },
+    { path: '/:pathMatch(.*)*', name: "404", component: ErrorView }
    
 
     // {

@@ -52,8 +52,9 @@
 import MovieCarouselVue from './MovieCarousel.vue';
 import { onMounted, ref, computed, watch } from 'vue'
 import { getMovieById, getMovies } from '@/modules/services'
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 const route = useRoute()
+const router = useRouter()
 
 components: {
     MovieCarouselVue
@@ -70,9 +71,13 @@ const getMovieDetail = async () => {
     console.log(type.value);
     isLoading.value = true
     await getMovieById(searchQuery.value).then(res => {
+        if(res.Response == "False") {
+           router.push({name: '404'})
+        }else{
         movie.value = res
         type.value = movie.value.Genre.split(",")[0];
         window.scrollTo(0, 0);
+    }
     }).catch(err => {
         console.log(err);
     }).finally(() => {

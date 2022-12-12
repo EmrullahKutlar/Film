@@ -84,7 +84,7 @@ const breakpoints = reactive({
         snapAlign: 'start',
     },
 })
-const movies = ref([])
+const movies = ref({})
 const routerHandler = (id) => {
     console.log(id);
     router.push({
@@ -116,6 +116,7 @@ onMounted(async () => {
         var populer = []
         var i = 0
         while (i < popularMoviesID.length) {
+            isLoading.value = true
             await getMovieById(popularMoviesID[i]).then(res => {
                 populer.push(res)
             }).catch(err => {
