@@ -9,7 +9,7 @@
                 aria-label="Toggle navigation">
             </i>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div ref="navbarRef" class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <router-link class="nav-link " aria-current="page" to="/">Anasayfa</router-link>
@@ -32,11 +32,14 @@
 
 <script setup>
 import searchResultVue from './searchResult.vue';
-import { ref } from 'vue'
+import { ref ,watch} from 'vue'
+import { useRoute } from 'vue-router';
+const route = useRoute()
+const navbarRef = ref(null)
 components:{
     searchResultVue
 }
-
+watch(() => route.fullPath, () => navbarRef.value.classList.remove("show"))
 </script>
 
 <style scoped>

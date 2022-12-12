@@ -29,7 +29,7 @@
                         <div class="d-flex col-12" @click="searchRouterHandler(movie.imdbID)">
                             <div>
                                 <img v-if="movie.Poster != 'N/A'" class="search-img rounded" :src="movie.Poster" alt="">
-                                <img v-else src="https://ibb.co/gr6xF6h" class="search-img rounded" alt="">
+                                <img v-else src="/omdb.png" class="search-img rounded" alt="">
                             </div>
                             <div class="ms-3 col-12 d-flex flex-column justify-content-center">
                                 <h6 class="text-dark mb-0">{{ movie.Title }}

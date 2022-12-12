@@ -11,7 +11,7 @@
             <div class="col-12 col-lg-4 mt-3 ">
                 <img v-if="movie.Poster != 'N/A'" class="rounded d-flex justify-content-center w-100 h-100"
                     :src="movie.Poster" alt="">
-                <img v-else src="https://ibb.co/gr6xF6h" class="rounded d-flex justify-content-center w-100 h-100"
+                <img v-else src="/omdb.png" class="rounded d-flex justify-content-center w-100 h-100"
                     alt="">
             </div>
             <div class="col-12 col-lg-8 mt-3 flex-column ">
