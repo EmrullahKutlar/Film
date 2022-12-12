@@ -19,7 +19,7 @@
                 <div v-if="errorMessage != null"> {{ errorMessage }}</div>
                 <div v-else class="card boder-0 mx-3 mb-3 " v-for="movie in movies" :key="movie">
                     <div @click="routerHandler(movie.imdbID)">
-                        <img v-if="movie.Poster == 'N/A'" src="/omdb.png" class="card-img-top rounded-2">
+                        <img v-if="movie.Poster == 'N/A'" src="../../../public/omdb.png" class="card-img-top rounded-2">
                         <img v-else :src="movie.Poster" class="card-img-top rounded-2 flex-fill">
                         <div class="card-body  flex-fill">
                             <h5 class="card-title text-light text-center flex-fill">{{ movie.Title }}

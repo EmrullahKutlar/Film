@@ -16,7 +16,7 @@
                 <Slide v-for="movie in movies" :key="movie">
                     <div class=" carousel__item card boder-0 mx-3 mb-3 ">
                         <div @click="routerHandler(movie.imdbID)">
-                            <img v-if="movie.Poster == 'N/A'" src="/omdb.png"
+                            <img v-if="movie.Poster == 'N/A'" src="../../../public/omdb.png"
                                 class="card-img-top rounded-2">
                             <img v-else :src="movie.Poster" class="card-img-top rounded-2 flex-fill">
                             <div class="card-body  flex-fill">
