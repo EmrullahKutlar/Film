@@ -3,7 +3,6 @@ import axios from "axios";
 export const getMovies = (page, year, search,type) => {
   return new Promise(async (resolve, reject) => {
     if (search!==null) {
-      console.log(page+" - "+ year+" - "+ search+" - "+type);
       type==="series"?type="series":type="movie";
       try {
         const response = await axios.post(
@@ -38,7 +37,6 @@ export const getMovieById = (id) => {
   });
 };
 export const getSuggestion = (type) => {
-  console.log(type);
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.post(

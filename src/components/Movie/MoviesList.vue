@@ -83,7 +83,6 @@ const onClickHandler = (page) => {
 };
 
 const routerHandler = (id) => {
-    console.log(id);
     router.push({
         path: '/movie',
         query: {

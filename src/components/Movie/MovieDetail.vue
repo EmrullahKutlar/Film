@@ -68,7 +68,6 @@ const suggestionMovies = ref({})
 const isLoading = ref(false)
 
 const getMovieDetail = async () => {
-    console.log(type.value);
     isLoading.value = true
     await getMovieById(searchQuery.value).then(res => {
         if(res.Response == "False") {

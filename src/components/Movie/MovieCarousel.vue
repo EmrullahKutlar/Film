@@ -374,7 +374,6 @@ const populer=ref([
     }
 ])
 const routerHandler = (id) => {
-    console.log(id);
     router.push({
         path: '/movie',
         query: {
@@ -385,13 +384,11 @@ const routerHandler = (id) => {
 const popularMoviesID = reactive(['tt13443470', 'tt9319668', 'tt16358384', 'tt10405370', 'tt8291284', 'tt0429087', 'tt1520211', 'tt0773262', 'tt2442560', 'tt0455275'])
 
 onMounted(async () => {
-    console.log(props.type);
     isLoading.value = true
 
     if (!props.isPopular) {
         await getSuggestion(props.type).then(res => {
             movies.value = res.Search
-            console.log(movies.value);
         }).catch(err => {
             console.log(err.message);
 
@@ -423,7 +420,6 @@ onMounted(async () => {
         /* Statik olarak */
         movies.value = populer.value
         isLoading.value = false
-        console.log(movies.value);
 
     }
 })
