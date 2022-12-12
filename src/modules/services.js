@@ -1,7 +1,5 @@
 import axios from "axios";
-const headers = {
-  "Content-Type": "application/json",
-};
+
 export const getMovies = (page, year, search,type) => {
   return new Promise(async (resolve, reject) => {
     if (search!==null) {
@@ -9,7 +7,7 @@ export const getMovies = (page, year, search,type) => {
       type==="series"?type="series":type="movie";
       try {
         const response = await axios.post(
-          `http://www.omdbapi.com/?apikey=75c9847a&type=${type}&s=${search}&page=${page}`,{headers}
+          `http://www.omdbapi.com/?apikey=75c9847a&type=${type}&s=${search}&page=${page}`
         );
         resolve(response.data);
       } catch (error) {
@@ -18,7 +16,7 @@ export const getMovies = (page, year, search,type) => {
     } else {
       try {
         const response = await axios.post(
-          `http://www.omdbapi.com/?apikey=75c9847a&type=movie&s=movie&y=${year}&page=${page}`,{headers}
+          `http://www.omdbapi.com/?apikey=75c9847a&type=movie&s=movie&y=${year}&page=${page}`
         );
         resolve(response.data);
       } catch (error) {
@@ -31,7 +29,7 @@ export const getMovieById = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.post(
-        `http://www.omdbapi.com/?apikey=75c9847a&plot=full&i=${id}`,{headers}
+        `http://www.omdbapi.com/?apikey=75c9847a&plot=full&i=${id}`
       );
       resolve(response.data);
     } catch (error) {
@@ -44,7 +42,7 @@ export const getSuggestion = (type) => {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.post(
-        `http://www.omdbapi.com/?apikey=75c9847a&type=movie&s=${type}`,{headers}
+        `http://www.omdbapi.com/?apikey=75c9847a&type=movie&s=${type}`
       );
       resolve(response.data);
     } catch (error) {
@@ -57,7 +55,7 @@ export const searchMovie = (search,type) => {
   return new Promise(async (resolve, reject) => {
     try {
       const response = await axios.post(
-        `http://www.omdbapi.com/?apikey=75c9847a&type=${type}&s=${search}`,{headers}
+        `http://www.omdbapi.com/?apikey=75c9847a&type=${type}&s=${search}`
       );
       resolve(response.data);
     } catch (error) {
