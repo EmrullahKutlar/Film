@@ -16,12 +16,12 @@
                     </li>
                 </ul>
                 <searchResultVue/>
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item me-3">
-                        <button class="nav-link btn btn-outline-warning " aria-current="page" href="#"><i class="bi bi-person-fill"></i> Üye Ol</button>
+                <ul class="navbar-nav  mb-2 mb-lg-0 mt-2 mt-lg-0">
+                    <li class="nav-item me-3 my-2 mb-lg-0">
+                        <button class="nav-link btn btn-outline-warning p-2" aria-current="page" href="#"><i class="bi bi-person-fill"></i> Üye Ol</button>
                     </li>
-                    <li class="nav-item">
-                        <button class="nav-link btn btn-outline-warning " aria-current="page" href="#"> <i class="bi bi-box-arrow-right"></i> Giriş Yap</button>
+                    <li class="nav-item my-2 mb-lg-0">
+                        <button class="nav-link btn btn-outline-warning p-2" aria-current="page" href="#"> <i class="bi bi-box-arrow-right"></i> Giriş Yap</button>
                     </li>
                 </ul>
             </div>
